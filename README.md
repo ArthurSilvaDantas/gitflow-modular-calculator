@@ -4,7 +4,7 @@
 
 Este repositório, é um repositório colaborativo e armazena os códigos de uma calculadora modular em Python. O foco principal não está propriamente nas funcionalidades da aplicação, mas sim no fluxo de desenvolvimento utilizando GitHub Flow e nas práticas de Gerência de Configuração de Software, incluindo controle de versão, controle de mudanças e estabelecimento de baselines.
 
-## :earth_americas: Distribuição de Módulos
+## :hammer: Distribuição de Módulos
 
 | Módulo | Arquivo | Funções a implementar | Responsável |
 |---|---|---|---|
