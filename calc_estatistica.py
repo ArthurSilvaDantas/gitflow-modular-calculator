@@ -6,77 +6,77 @@
 from math import sqrt
 
 
-def _validate_data(dados):
-    if len(dados) == 0:
+def _validate_data(data):
+    if len(data) == 0:
         raise ValueError("Data list cannot be empty.")
 
 
-def media(dados):
+def mean(data):
     """
     Calculate the arithmetic mean of a list of numbers.
 
     Args:
-        dados (list[int | float]): List of numeric values.
+        data (list[int | float]): List of numeric values.
 
     Returns:
         float: The arithmetic mean.
 
     Raises:
-        ValueError: If dados is empty.
+        ValueError: If data is empty.
 
     Examples:
-        >>> media([1, 2, 3])
+        >>> mean([1, 2, 3])
         2.0
     """
-    _validate_data(dados)
-    return sum(dados) / len(dados)
+    _validate_data(data)
+    return sum(data) / len(data)
 
 
-def mediana(dados):
+def median(data):
     """
     Calculate the median of a list of numbers without changing the original list.
 
     Args:
-        dados (list[int | float]): List of numeric values.
+        data (list[int | float]): List of numeric values.
 
     Returns:
         int | float: The median value.
 
     Raises:
-        ValueError: If dados is empty.
+        ValueError: If data is empty.
 
     Examples:
-        >>> mediana([3, 1, 2])
+        >>> median([3, 1, 2])
         2
     """
-    _validate_data(dados)
-    ordenados = sorted(dados)
-    meio = len(ordenados) // 2
+    _validate_data(data)
+    sorted_values = sorted(data)
+    middle_index = len(sorted_values) // 2
 
-    if len(ordenados) % 2 == 1:
-        return ordenados[meio]
+    if len(sorted_values) % 2 == 1:
+        return sorted_values[middle_index]
 
-    return (ordenados[meio - 1] + ordenados[meio]) / 2
+    return (sorted_values[middle_index - 1] + sorted_values[middle_index]) / 2
 
 
-def desvio_padrao(dados):
+def standard_deviation(data):
     """
     Calculate the population standard deviation of a list of numbers.
 
     Args:
-        dados (list[int | float]): List of numeric values.
+        data (list[int | float]): List of numeric values.
 
     Returns:
         float: The population standard deviation.
 
     Raises:
-        ValueError: If dados is empty.
+        ValueError: If data is empty.
 
     Examples:
-        >>> desvio_padrao([2, 2, 2])
+        >>> standard_deviation([2, 2, 2])
         0.0
     """
-    _validate_data(dados)
-    valor_medio = media(dados)
-    variancia = sum((valor - valor_medio) ** 2 for valor in dados) / len(dados)
-    return sqrt(variancia)
+    _validate_data(data)
+    mean_value = mean(data)
+    variance = sum((value - mean_value) ** 2 for value in data) / len(data)
+    return sqrt(variance)
