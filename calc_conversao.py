@@ -4,21 +4,21 @@
 # Branch: feature/modulo-conversao
 
 
-def celsius_para_fahrenheit(celsius):
+def celsius_to_fahrenheit(celsius):
     """
-    Converte um valor em celsius para fahrenheit.
-
+    Converts a value from Celsius to Fahrenheit.
+    
     Args:
-        celsius (float | int): Temperatura em graus Celsius.
-
+        celsius (float | int): Temperature in degrees Celsius.
+        
     Returns:
-        float: Temperatura convertida para Fahrenheit.
+        float: Temperature converted to Fahrenheit.
     
     Note:
-        O zero absoluto corresponde a -273.15 °C.
-
+        Absolute zero corresponds to -273.15 °C.
+        
     Example:
-        >>> celsius_para_fahrenheit(-40)
+        >>> celsius_to_fahrenheit(-40)
         -40.0
     """
     
@@ -26,48 +26,45 @@ def celsius_para_fahrenheit(celsius):
 
 
 
-def km_para_milhas(km):
+def km_to_miles(km):
     """
-    Converte uma distância em quilômetros para milhas.
-
+    Converts a distance in kilometers to miles.
+    
     Args:
-        km (float | int): Distância em quilômetros.
-
+        km (float | int): Distance in kilometers.
+        
     Returns:
-        float: Distância convertida para milhas.
-
+        float: Distance converted to miles.
+        
     Raises:
-        ValueError: Se o valor de km for negativo.
-
+        ValueError: If the km value is negative.
+        
     Example:
-        >>> km_para_milhas(0)
+        >>> km_to_miles(0)
         0.0
     """
     if km < 0:
-        raise ValueError("O km não pode ser negativo")
-
+        raise ValueError("km cannot be negative")
     return km * 0.621371
 
 
-
-def kg_para_libras(kg):
+def kg_to_pounds(kg):
     """
-    Converte um valor em quilogramas para libras.
-
+    Converts a value in kilograms to pounds.
+    
     Args:
-        kg (float | int): Massa em quilogramas.
-
+        kg (float | int): Mass in kilograms.
+        
     Returns:
-        float: Massa convertida para libras.
-
+        float: Mass converted to pounds.
+        
     Raises:
-        ValueError: Se o valor de kg for negativo.
-
+        ValueError: If the kg value is negative.
+        
     Example:
-        >>> kg_para_libras(1)
+        >>> kg_to_pounds(1)
         2.20462
     """
     if kg < 0:
-        raise ValueError("O kg não pode ser negativo")
-
+        raise ValueError("kg cannot be negative")
     return kg * 2.20462
