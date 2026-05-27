@@ -4,72 +4,72 @@
 # Branch: feature/modulo-percentual
 
 
-def _validate_percentage(pct):
-    if pct < 0:
+def _validate_percentage(percentage_rate):
+    if percentage_rate < 0:
         raise ValueError("Percentage cannot be negative.")
 
 
-def percentual(valor, pct):
+def percentage(value, percentage_rate):
     """
     Calculate how much a percentage represents from a base value.
 
     Args:
-        valor (int | float): Base value.
-        pct (int | float): Percentage to calculate.
+        value (int | float): Base value.
+        percentage_rate (int | float): Percentage to calculate.
 
     Returns:
         float: The percentage amount from the base value.
 
     Raises:
-        ValueError: If pct is negative.
+        ValueError: If percentage_rate is negative.
 
     Examples:
-        >>> percentual(200, 10)
+        >>> percentage(200, 10)
         20.0
     """
-    _validate_percentage(pct)
-    return valor * pct / 100
+    _validate_percentage(percentage_rate)
+    return value * percentage_rate / 100
 
 
-def acrescimo(valor, pct):
+def increase(value, percentage_rate):
     """
     Apply a percentage increase to a base value.
 
     Args:
-        valor (int | float): Base value.
-        pct (int | float): Percentage increase to apply.
+        value (int | float): Base value.
+        percentage_rate (int | float): Percentage increase to apply.
 
     Returns:
         float: The value after the percentage increase.
 
     Raises:
-        ValueError: If pct is negative.
+        ValueError: If percentage_rate is negative.
 
     Examples:
-        >>> acrescimo(200, 10)
+        >>> increase(200, 10)
         220.0
     """
-    _validate_percentage(pct)
-    return valor + percentual(valor, pct)
+    _validate_percentage(percentage_rate)
+    return value + percentage(value, percentage_rate)
 
 
-def desconto(valor, pct):
+def discount(value, percentage_rate):
     """
     Apply a percentage discount to a base value.
 
     Args:
-        valor (int | float): Base value.
-        pct (int | float): Percentage discount to apply.
+        value (int | float): Base value.
+        percentage_rate (int | float): Percentage discount to apply.
 
     Returns:
         float: The value after the percentage discount.
 
     Raises:
-        ValueError: If pct is negative.
+        ValueError: If percentage_rate is negative.
 
     Examples:
-        >>> desconto(200, 10)
+        >>> discount(200, 10)
         180.0
     """
-    _validate_percentage(pct)
-    return valor - percentual(valor, pct)
+    _validate_percentage(percentage_rate)
+    return value - percentage(value, percentage_rate)
